@@ -1,0 +1,14 @@
+tensorrt.lite
+================
+
+The :mod:`lite` package provides a streamlined set of API functions that
+allow users to export a trained model, build an engine, and run inference.
+
+.. automodule:: tensorrt.lite
+.. currentmodule:: tensorrt.lite
+
+
+Engine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: Engine
+    :members:

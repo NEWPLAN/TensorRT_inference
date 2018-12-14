@@ -1,0 +1,87 @@
+tensorrt.parsers
+================
+The :mod:`parsers` package provides parsers for both Caffe and the Universal Framework Format (UFF).
+
+.. automodule:: tensorrt.parsers
+.. currentmodule:: tensorrt.parsers
+
+Caffe Parser
+-----------------
+.. automodule:: tensorrt.parsers.caffeparser
+.. currentmodule:: tensorrt.parsers.caffeparser
+.. autoclass:: CaffeParser
+    :members:
+
+BlobNameToTensor
+~~~~~~~~~~~~~~~~~
+.. autoclass:: BlobNameToTensor
+    :members:
+
+BinaryProtoBlob
+~~~~~~~~~~~~~~~~
+.. autoclass:: BinaryProtoBlob
+    :members:
+
+PluginFactory
+~~~~~~~~~~~~~~~~
+.. autoclass:: PluginFactory
+    :members:
+
+UFF Parser
+----------------------------
+.. automodule:: tensorrt.parsers.uffparser
+.. currentmodule:: tensorrt.parsers.uffparser
+.. autoclass:: UffParser
+    :members:
+
+create_uff_parser
+~~~~~~~~~~~~~~~~~~~
+.. autofunction:: create_uff_parser
+
+shutdown_protobuf_library
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autofunction:: shutdown_protobuf_library
+
+ONNX Parser
+----------------------------
+.. automodule:: tensorrt.parsers.onnxparser
+.. currentmodule:: tensorrt.parsers.onnxparser
+.. autoclass:: ONNXParser
+    :members:
+
+    .. automethod:: convert_to_trtnetwork
+    .. automethod:: destroy
+    .. automethod:: get_logger
+    .. automethod:: get_trtnetwork
+    .. automethod:: parse
+    .. automethod:: report_parsing_info
+    .. automethod:: write_text
+    .. automethod:: write_text_with_weights
+
+create_onnxparser
+~~~~~~~~~~~~~~~~~~~
+.. autofunction:: create_onnxparser
+
+ONNX Config
+----------------------------
+.. autoclass:: OnnxConfig
+    :members:
+
+    .. automethod:: add_verbosity
+    .. automethod:: get_full_text_file_name
+    .. automethod:: get_model_dtype
+    .. automethod:: get_model_file_name
+    .. automethod:: get_print_layer_info
+    .. automethod:: get_text_file_name
+    .. automethod:: get_verbosity_level
+    .. automethod:: reduce_verbosity
+    .. automethod:: set_full_text_file_name
+    .. automethod:: set_model_dtype
+    .. automethod:: set_model_file_name
+    .. automethod:: set_print_layer_info
+    .. automethod:: set_text_file_name
+    .. automethod:: set_verbosity_level
+
+create_onnxconfig
+~~~~~~~~~~~~~~~~~~~
+.. autofunction:: create_onnxconfig

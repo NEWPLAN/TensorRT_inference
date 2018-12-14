@@ -1,0 +1,103 @@
+.. TensorRT documentation master file.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+=====================================================
+TensorRT 4.0 Python API Documentation
+=====================================================
+
+Installation
+------------
+
+First, ensure that you have TensorRT 4.0 installed and accessible in your ``LD_LIBRARY_PATH``. You can find it `here <https://developer.nvidia.com/tensorrt>`_.
+
+Installing the Python APIs
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can install the Python API using the wheels located in the ``python`` folder.
+
+- Python 2.7: ``pip2 install tensorrt-*_16.04-cp27-cp27mu-linux_x86_64.whl``
+
+- Python 3.5: ``pip3 install tensorrt-*_16.04-cp35-cp35m-linux_x86_64.whl``
+
+Where ``tensorrt-*`` is the version you are installing (e.g. ``tensorrt-4.0.1.6``).
+
+Installing the Graph Surgeon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TensorRT includes the Graph Surgeon, which can transform TensorFlow graphs to ensure compatibility with the UFF converter. It can be used to specify plugin nodes for operations that might be unsupported in the UFF converter or TensorRT, and is required to handle certain TensorFlow ops. You can install it using the wheel located in the ``graphsurgeon`` folder.
+
+- ``pip install graphsurgeon-0.2.0-py2.py3-none-any.whl``
+
+Installing the UFF Toolkit
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TensorRT includes the Universal Framework Format (UFF) toolkit, which can convert models trained in TensorFlow to a format from which TensorRT can build engines. You can install it using the wheel located in the ``uff`` folder. Note that the UFF converter is only designed and tested for x86 platforms. To use TensorRT with UFF on other platforms, first generate the UFF file on an x86 platform.
+
+- ``pip install uff-0.4.0-py2.py3-none-any.whl``
+
+Installing PyCUDA
+~~~~~~~~~~~~~~~~~
+
+TensorRT uses PyCUDA to interface with the GPU. You can install PyCUDA `from here <https://wiki.tiker.net/PyCuda/Installation/Linux>`_.
+
+Use Cases and Examples
+----------------------
+
+1. Running an existing TensorFlow model with TensorRT.
+
+    * `Converting Tensorflow to TensorRT <workflows/tf_to_tensorrt.html>`_
+
+2. Running an existing Caffe model with TensorRT.
+
+    * `Converting a Caffe model to TensorRT <workflows/caffe_to_tensorrt.html>`_
+
+3. Manually constructing a TensorRT engine (for use with PyTorch, for example).
+
+    * `Manually constructing a TensorRT engine <workflows/manually_construct_tensorrt_engine.html>`_
+
+3. Deploying a TensorRT engine as part of a larger application, such as a web backend.
+
+We have included a few sample applications with the TensorRT Python package in the ``examples`` directory.
+
+.. Define a TOC tree for the sidebar. :hidden: means that it won't be duplicated on this page.
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+    :caption: Graph Surgeon API
+
+    graphsurgeon/graphsurgeon
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+    :caption: UFF API
+
+    uff/uff
+
+.. toctree::
+    :glob:
+    :hidden:
+    :maxdepth: 1
+    :caption: Workflows
+
+    workflows/caffe_to_tensorrt.ipynb
+    workflows/tf_to_tensorrt.ipynb
+    workflows/manually_construct_tensorrt_engine.ipynb
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :caption: Package Reference
+
+    pkg_ref/infer
+    pkg_ref/utils
+    pkg_ref/lite
+    pkg_ref/parsers
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :caption: Index
+
+    genindex
